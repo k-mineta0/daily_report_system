@@ -12,6 +12,11 @@ public enum ForwardConst {
     ACT_EMP("Employee"),
     ACT_REP("Report"),
     ACT_AUTH("Auth"),
+    //追加分
+    ACT_FIX("Fix"), //勤怠修正の申請
+    ACT_STAMPING("Stamping"),	//打刻画面
+    ACT_ATTENDANCERECORD("Attendancerecord"),	//勤怠一覧
+    ACT_FIXREQUEST("Fixrequest"),//修正申請一覧
 
     //command
     CMD("command"),

@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="constants.AttributeConst" %>
 <%@ page import="constants.ForwardConst" %>
-
 <c:set var="action" value="${ForwardConst.ACT_AUTH.getValue()}" />
 <c:set var="command" value="${ForwardConst.CMD_LOGIN.getValue()}" />
 
@@ -18,6 +17,7 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
+
         <h2>ログイン</h2>
         <form method="POST" action="<c:url value='/?action=${action}&command=${command}' />">
             <label for="${AttributeConst.EMP_CODE.getValue()}">社員番号</label><br />
@@ -33,3 +33,4 @@
         </form>
     </c:param>
 </c:import>
+

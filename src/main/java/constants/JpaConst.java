@@ -40,9 +40,37 @@ public interface JpaConst {
     String REP_COL_CREATED_AT = "created_at"; //登録日時
     String REP_COL_UPDATED_AT = "updated_at"; //更新日時
 
+  //勤怠データテーブル
+    String TABLE_ATT = "attendance"; //テーブル名
+    //勤怠データテーブルカラム
+    String ATT_COL_ID = "id"; //id
+    String ATT_COL_START_AT = "start_at"; //出勤時間
+    String ATT_COL_REST = "rest"; //休憩時間
+    String ATT_COL_CLASS = "class"; //勤務区分
+    String ATT_COL_EMP = "employee_id"; //従業員のID
+    String ATT_COL_LEAVING_AT = "leaving_at"; //退勤時間
+    String ATT_COL_CREATED_AT = "created_at"; //登録日時
+
+  //勤怠データ修正テーブル
+    String TABLE_REV = "revise"; //テーブル名
+    //勤怠データ修正テーブルカラム
+    String REV_COL_ID = "id"; //id
+    String REV_COL_MESSAGE = "message"; //メッセージ
+    String REV_COL_START_AT = "start_at"; //出勤時間
+    String REV_COL_LEAVING = "leaving_at"; //退勤時間
+    String REV_COL_CLASS = "class"; //勤務区分
+    String REV_COL_CONDITION = "application_condition "; //申請状況
+    String REV_COL_ATTENDANCE_ID = "attendance_id"; //勤怠ID
+    String REV_COL_REJECTION = "rejection_remand"; //差し戻し理由
+    String REV_COL_PART = "application_part "; //申請区分
+
+
+
     //Entity名
     String ENTITY_EMP = "employee"; //従業員
     String ENTITY_REP = "report"; //日報
+    String ENTITY_REV = "revise"; //勤怠データ修正
+    String ENTITY_ATT = "attendance"; //勤怠データ
 
     //JPQL内パラメータ
     String JPQL_PARM_CODE = "code"; //社員番号

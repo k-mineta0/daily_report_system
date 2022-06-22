@@ -8,29 +8,48 @@
 <c:set var="actRep" value="${ForwardConst.ACT_REP.getValue()}" />
 <c:set var="actAuth" value="${ForwardConst.ACT_AUTH.getValue()}" />
 
+<c:set var="actFix" value="${ForwardConst.ACT_FIX.getValue()}" />
+<c:set var="actStamping" value="${ForwardConst.ACT_STAMPING.getValue()}" />
+<c:set var="actAttendancerecord" value="${ForwardConst.ACT_ATTENDANCERECORD.getValue()}" />
+<c:set var="actFixrequest" value="${ForwardConst.ACT_FIXREQUEST.getValue()}" />
+
 <c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
 <c:set var="commOut" value="${ForwardConst.CMD_LOGOUT.getValue()}" />
 
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8">
-    <title><c:out value="日報管理システム" /></title>
+	<meta charset="UTF-8">
+    <title><c:out value="勤怠・日報管理システム" /></title>
     <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
     <link rel="stylesheet" href="<c:url value='/css/style.css' />">
 </head>
+
 <body>
     <div id="wrapper">
         <div id="header">
+
             <div id="header_menu">
-                <h1><a href="<c:url value='/?action=${actTop}&command=${commIdx}' />">日報管理システム</a></h1>&nbsp;&nbsp;&nbsp;
+                <h1><a href="<c:url value='/?action=${actTop}&command=${commIdx}' />">勤怠・日報管理システム</a></h1>&nbsp;&nbsp;&nbsp;
+
                 <c:if test="${sessionScope.login_employee != null}">
+
                     <c:if test="${sessionScope.login_employee.adminFlag == AttributeConst.ROLE_ADMIN.getIntegerValue()}">
                         <a href="<c:url value='?action=${actEmp}&command=${commIdx}' />">従業員管理</a>&nbsp;
                     </c:if>
+
                     <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">日報管理</a>&nbsp;
+                    <a href="<c:url value='?action=${actFix}&command=${commIdx}' />">勤怠修正の申請</a>&nbsp;
+                    <a href="<c:url value='?action=${actStamping}&command=${commIdx}' />">打刻画面</a>&nbsp;
+                   	<a href="<c:url value='?action=${actAttendancerecord}&command=${commIdx}' />">勤怠一覧</a>&nbsp;
+
+                   <c:if test="${sessionScope.login_employee.adminFlag == AttributeConst.ROLE_ADMIN.getIntegerValue()}">
+                  		<a href="<c:url value='?action=${actFixrequest}&command=${commIdx}' />">修正申請一覧</a>&nbsp;
+                    </c:if>
                 </c:if>
             </div>
+
             <c:if test="${sessionScope.login_employee != null}">
                 <div id="employee_name">
                     <c:out value="${sessionScope.login_employee.name}" />
@@ -40,7 +59,7 @@
             </c:if>
         </div>
         <div id="content">${param.content}</div>
-        <div id="footer">by Taro Kirameki.</div>
+        <div id="footer">by Kentaro Mineta.</div>
     </div>
 </body>
 </html>
