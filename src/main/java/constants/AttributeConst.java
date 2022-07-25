@@ -41,6 +41,10 @@ public enum AttributeConst {
     DEL_FLAG_TRUE(1),
     DEL_FLAG_FALSE(0),
 
+  //いいねフラグ
+    LIKE_FLAG_TRUE(1),
+    LIKE_FLAG_FALSE(0),
+
     //日報管理
     REPORT("report"),
     REPORTS("reports"),
@@ -48,7 +52,13 @@ public enum AttributeConst {
     REP_ID("id"),
     REP_DATE("report_date"),
     REP_TITLE("title"),
-    REP_CONTENT("content");
+    REP_CONTENT("content"),
+
+	//いいね管理
+    LIKE("like"),
+    LIKES("likes"),
+    LIK_COUNT("likes_count"),
+    LIK_ID("id");
 
     private final String text;
     private final Integer i;

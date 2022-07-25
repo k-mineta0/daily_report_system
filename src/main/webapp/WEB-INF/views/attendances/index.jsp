@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="constants.ForwardConst" %>
 
-<c:set var="actRep" value="${ForwardConst.ACT_REP.getValue()}" />
+<c:set var="actAtt" value="${ForwardConst.ACT_ATT.getValue()}" />
 <c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
 <c:set var="commShow" value="${ForwardConst.CMD_SHOW.getValue()}" />
 <c:set var="commNew" value="${ForwardConst.CMD_NEW.getValue()}" />
@@ -15,23 +15,39 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>日報　一覧</h2>
-        <table id="report_list">
+		<h2>勤怠 一覧</h2>
+		<table id="attendance_all">
+			<tbody>
+				<tr>
+					<td class="attendance_days">出勤日数</td>
+					<td class="attendance_alltime">総労働時間</td>
+				</tr>
+			</tbody>
+
+		</table>
+
+
+		<table id="attendance_list">
             <tbody>
                 <tr>
-                    <th class="report_name">氏名</th>
-                    <th class="report_date">日付</th>
-                    <th class="report_title">タイトル</th>
-                    <th class="report_action">操作</th>
+                    <td class="attendance_day">日付</td>
+                    <td class="attendance_class">勤怠区分</td>
+                    <td class="attendance_start">出勤時刻</td>
+                    <td class="attendance_finish">退勤時刻</td>
+                    <td class="attendance_alltime">労働時間</td>
+                    <td class="attendance_rest">休憩時間</td>
                 </tr>
-                <c:forEach var="report" items="${reports}" varStatus="status">
-                    <fmt:parseDate value="${report.reportDate}" pattern="yyyy-MM-dd" var="reportDay" type="date" />
+
+                <c:forEach var="attendance" items="${attendances}" varStatus="status">
+                    <fmt:parseDate value="${attendance.date}" pattern="yyyy-MM-dd" var="attendanceDay" type="date" />
 
                     <tr class="row${status.count % 2}">
-                        <td class="report_name"><c:out value="${report.employee.name}" /></td>
-                        <td class="report_date"><fmt:formatDate value='${reportDay}' pattern='yyyy-MM-dd' /></td>
-                        <td class="report_title">${report.title}</td>
-                        <td class="report_action"><a href="<c:url value='?action=${actRep}&command=${commShow}&id=${report.id}' />">詳細を見る</a></td>
+                        <td class="attendance_day"><fmt:formatDate value='${attendanceDay}' pattern='MM-dd' /></td>
+                        <td class="attendance_class">${attendance.attclass}</td>
+                        <td class="attendance_start">${attendance.attstart_at}</td>
+                        <td class="attendance_finish">${attendance.leaving_at}</td>
+                        <td class="attendance_alltime">${attendance.alltime}</td>
+                        <td class="attendance_rest">${attendance.rest}</td>
                     </tr>
                 </c:forEach>
             </tbody>
@@ -50,7 +66,7 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">新規日報の登録</a></p>
+        <p><a href="<c:url value='?action=${actAtt}&command=${commNew}' />">新規勤怠の登録</a></p>
 
     </c:param>
 </c:import>

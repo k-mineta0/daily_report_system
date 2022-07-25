@@ -1,5 +1,6 @@
 package actions.views;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
@@ -23,7 +24,7 @@ public class AttendanceView {
     private Integer id;
 
     /**
-     * 登録した従業員
+     * 勤怠を登録した従業員
      */
     private EmployeeView employee;
 
@@ -38,17 +39,28 @@ public class AttendanceView {
     private LocalDateTime rest;
 
     /**
+     * いつの日報かを示す日付
+     */
+    private LocalDate Date;
+
+    /**
      * 勤務区分
      */
     private String attclass;
 
+
     /**
      * 退勤時間
      */
-    private LocalDateTime leavingAt;
+    private LocalDateTime leaving_at;
 
     /**
      * 登録日時
      */
-    private LocalDateTime createdAt;
-}
+    private LocalDateTime created_at;
+
+    /**
+     * 申請区分
+     */
+    private String request;
+	}

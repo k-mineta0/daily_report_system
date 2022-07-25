@@ -12,11 +12,7 @@ public enum ForwardConst {
     ACT_EMP("Employee"),
     ACT_REP("Report"),
     ACT_AUTH("Auth"),
-    //追加分
-    ACT_FIX("Fix"), //勤怠修正の申請
-    ACT_STAMPING("Stamping"),	//打刻画面
-    ACT_ATTENDANCERECORD("Attendancerecord"),	//勤怠一覧
-    ACT_FIXREQUEST("Fixrequest"),//修正申請一覧
+    ACT_LIK("Like"),
 
     //command
     CMD("command"),
@@ -31,6 +27,7 @@ public enum ForwardConst {
     CMD_EDIT("edit"),
     CMD_UPDATE("update"),
     CMD_DESTROY("destroy"),
+    CMD_LIKE("like"),
 
     //jsp
     FW_ERR_UNKNOWN("error/unknown"),
@@ -40,10 +37,14 @@ public enum ForwardConst {
     FW_EMP_SHOW("employees/show"),
     FW_EMP_NEW("employees/new"),
     FW_EMP_EDIT("employees/edit"),
+    FW_REP_MYSHOW("reports/myshow"),
+
     FW_REP_INDEX("reports/index"),
     FW_REP_SHOW("reports/show"),
     FW_REP_NEW("reports/new"),
-    FW_REP_EDIT("reports/edit");
+    FW_REP_EDIT("reports/edit"),
+
+	FW_LIK_SHOW("likes/show");
 
     /**
      * 文字列

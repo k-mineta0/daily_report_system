@@ -199,7 +199,7 @@ public class ReportAction extends ActionBase {
         //CSRF対策 tokenのチェック
         if (checkToken()) {
 
-            //idを条件に日報データを取得する
+            //日報idを条件に日報データを取得する
             ReportView rv = service.findOne(toNumber(getRequestParam(AttributeConst.REP_ID)));
 
             //入力された日報内容を設定する
@@ -230,5 +230,6 @@ public class ReportAction extends ActionBase {
 
             }
         }
-    }
+        }
+
 }

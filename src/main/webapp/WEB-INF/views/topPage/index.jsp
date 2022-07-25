@@ -28,7 +28,6 @@
                     <th class="report_title">タイトル</th>
                     <th class="report_action">操作</th>
                 </tr>
-
                 <c:forEach var="report" items="${reports}" varStatus="status">
                     <fmt:parseDate value="${report.reportDate}" pattern="yyyy-MM-dd" var="reportDay" type="date" />
                     <tr class="row${status.count % 2}">
@@ -48,14 +47,12 @@
                     <c:when test="${i == page}">
                         <c:out value="${i}" />&nbsp;
                     </c:when>
-
                     <c:otherwise>
                         <a href="<c:url value='?action=${actTop}&command=${commIdx}&page=${i}' />"><c:out value="${i}" /></a>&nbsp;
                     </c:otherwise>
                 </c:choose>
             </c:forEach>
         </div>
-
         <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">新規日報の登録</a></p>
     </c:param>
 </c:import>

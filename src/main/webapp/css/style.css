@@ -162,3 +162,17 @@ pre {
 h3 {
     font-size: larger;
 }
+btn1{
+	background: black;
+}
+week {
+	padding: 20px;              /* 余白指定 */
+    background-color:  #ddd;    /* 背景色指定 */
+    height: 150px;              /* 高さ指定 */
+}
+time {
+	background-color: #03A9F4;  /* 背景色指定 */
+    width: 200px;               /* 幅指定 */
+    height: 90px;               /* 高さ指定 */
+    margin:  0 auto;            /* 中央寄せ */
+}
