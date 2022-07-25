@@ -32,6 +32,9 @@ import lombok.Setter;
 	@NamedQuery(
             name = JpaConst.Q_LIK_GET_ALL_MINE,
             query = JpaConst.Q_LIK_GET_ALL_MINE_DEF),
+	@NamedQuery(
+            name = JpaConst.Q_LIK_COUNT_ALL_MINE,
+            query = JpaConst.Q_LIK_COUNT_ALL_MINE_DEF)
 })
 
 @Getter //全てのクラスフィールドについてgetterを自動生成する(Lombok)
@@ -45,21 +48,21 @@ public class Like {
      * id
      */
     @Id
-    @Column(name = "id")
+    @Column(name = JpaConst.LIK_COL_ID)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     /**
-     * いいね対象の日報
+     * いいねする日報
      */
     @ManyToOne
-    @JoinColumn(name = "report_id", nullable = false)
+    @JoinColumn(name = JpaConst.LIK_COL_REP, nullable = false)
     private Report report;
 
     /**
-     * いいねした従業員
+     * いいねを登録した従業員
      */
     @ManyToOne
-    @JoinColumn(name = "employee_id", nullable = false)
+    @JoinColumn(name = JpaConst.LIK_COL_EMP, nullable = false)
     private Employee employee;
 }

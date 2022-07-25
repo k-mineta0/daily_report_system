@@ -31,7 +31,7 @@ public class FrontController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        //パラメータに該当するActionクラスのインスタンス
+        //クエリパラメータに該当するActionクラスのインスタンスを取得
         ActionBase action = getAction(request, response);
 
         //サーブレットコンテキスト、リクエスト、レスポンスをActionインスタンスのフィールドに設定
