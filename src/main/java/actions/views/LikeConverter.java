@@ -13,7 +13,7 @@ public class LikeConverter {
 
 	/**
 	 * ViewモデルのインスタンスからDTOモデルのインスタンスを作成する
-	 * @param rv LikeViewのインスタンス
+	 * @param lv LikeViewのインスタンス
 	 * @return Likeのインスタンス
 	 */
 	public static Like toModel(LikeView lv) {

@@ -1,4 +1,4 @@
-package constants;
+	package constants;
 
 /**
  * 画面の項目値等を定義するEnumクラス
@@ -12,6 +12,7 @@ public enum AttributeConst {
     //一覧画面共通
     MAX_ROW("maxRow"),
     PAGE("page"),
+    MAX_ROWS("maxRows"),
 
     //入力フォーム共通
     TOKEN("_token"),
@@ -53,10 +54,12 @@ public enum AttributeConst {
     REP_DATE("report_date"),
     REP_TITLE("title"),
     REP_CONTENT("content"),
-
+    REP_NAMEID("report_id"),
 	//いいね管理
     LIKE("like"),
     LIKES("likes"),
+    LIK_MYCOUNT("like_count"),
+
     LIK_COUNT("likes_count"),
     LIK_ID("id");
 

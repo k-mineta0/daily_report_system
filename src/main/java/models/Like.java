@@ -24,17 +24,15 @@ import lombok.Setter;
 @Table(name = JpaConst.TABLE_LIK)
 @NamedQueries({
 	@NamedQuery(
-            name = JpaConst.Q_LIK_GET_ALL,
-            query = JpaConst.Q_LIK_GET_ALL_DEF),
+            name = JpaConst.Q_LIK_GET_ALL_MINE,
+            query = JpaConst.Q_LIK_COUNT_MINE_DEF),
 	@NamedQuery(
             name = JpaConst.Q_LIK_COUNT,
             query = JpaConst.Q_LIK_COUNT_DEF),
 	@NamedQuery(
-            name = JpaConst.Q_LIK_GET_ALL_MINE,
-            query = JpaConst.Q_LIK_GET_ALL_MINE_DEF),
-	@NamedQuery(
             name = JpaConst.Q_LIK_COUNT_ALL_MINE,
             query = JpaConst.Q_LIK_COUNT_ALL_MINE_DEF)
+
 })
 
 @Getter //全てのクラスフィールドについてgetterを自動生成する(Lombok)

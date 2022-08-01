@@ -40,8 +40,6 @@ public class TopAction extends ActionBase {
      */
     public void index() throws ServletException, IOException {
 
-        // 以下追記
-
         //セッションからログイン中の従業員情報を取得
         EmployeeView loginEmployee = (EmployeeView) getSessionScope(AttributeConst.LOGIN_EMP);
 
