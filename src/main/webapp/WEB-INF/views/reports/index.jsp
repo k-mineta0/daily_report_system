@@ -35,7 +35,7 @@
                         <td class="report_title">${report.title}</td>
 
                         <td class="report_like_count"><a href="<c:url value='?action=${actLik}&command=${commShow}&id=${report.id}'/>">
-                        	<c:out value="${report.like_count}" /> 件</a></td>
+                        	<c:out value="${report.like_count}" />件</a></td>
 
                         <td class="report_action"><a href="<c:url value='?action=${actRep}&command=${commShow}&id=${report.id}' />">詳細を見る</a></td>
                     </tr>
