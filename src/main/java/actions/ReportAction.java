@@ -115,6 +115,7 @@ public class ReportAction extends ActionBase {
 			//セッションからログイン中の従業員情報を取得
 			EmployeeView ev = (EmployeeView) getSessionScope(AttributeConst.LOGIN_EMP);
 
+
 			//パラメータの値をもとに日報情報のインスタンスを作成する
 			ReportView rv = new ReportView(
 					null,
@@ -124,7 +125,7 @@ public class ReportAction extends ActionBase {
 					getRequestParam(AttributeConst.REP_CONTENT),
 					null,
 					null,
-					null);
+					0);
 
 			//日報情報登録
 			List<String> errors = service.create(rv);
